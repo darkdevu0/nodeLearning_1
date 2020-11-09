@@ -1,3 +1,9 @@
-const hello = 'Hello world';
+const fs = require('fs');
 
-console.log(hello);
+const txt = fs.readFileSync('./txt/input.txt', 'utf-8');
+
+const textOut = `hello \n ${txt} date: ${Date.now()}`;
+
+fs.writeFileSync('./txt/final.txt', textOut);
+
+console.log('File written')
